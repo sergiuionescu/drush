@@ -20,13 +20,17 @@ task :knife do
   sh "bundle exec knife cookbook test cookbook -c test/.chef/knife.rb -o #{sandbox_path}/../"
 end
 
+desc "Test cookbook services"
+task :cookbook do
+  sh "berks install"
+end
+
 task :prepare_sandbox do
   files = %w{*.md *.rb attributes definitions files libraries providers recipes resources templates}
 
   rm_rf sandbox_path
   mkdir_p sandbox_path
   cp_r Dir.glob("{#{files.join(',')}}"), sandbox_path
-  sh "berks install"
 end
 
 private
