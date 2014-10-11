@@ -26,6 +26,7 @@ task :prepare_sandbox do
   rm_rf sandbox_path
   mkdir_p sandbox_path
   cp_r Dir.glob("{#{files.join(',')}}"), sandbox_path
+  sh "berks install"
 end
 
 private
