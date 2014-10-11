@@ -22,10 +22,9 @@ end
 
 desc "Test cookbook services"
 task :cookbook do
-  sh "PATH=~/.chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/bin:$PATH"
-  sh "ls ~/"
-  sh "ls ~/.chefdk/gem/ruby/"
-  sh "ls $HOME"
+  sh "PATH=/opt/chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/bin:$PATH"
+  sh "ls /opt/chefdk/"
+  sh "chef verify"
   sh "berks install"
 end
 
