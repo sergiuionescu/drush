@@ -2,6 +2,7 @@ drush
 =====
 
 Drush 7+ cookbook. Also supports Drupal 6 via composer.
+[![Build Status](https://secure.travis-ci.org/sergiuionescu/drush.png)](http://travis-ci.org/sergiuionescu/drush)
 
 Requirements
 ------------
