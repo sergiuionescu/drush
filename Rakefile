@@ -26,8 +26,6 @@ task :prepare_sandbox do
   rm_rf sandbox_path
   mkdir_p sandbox_path
   cp_r Dir.glob("{#{files.join(',')}}"), sandbox_path
-  sh "wget http://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.0-1_amd64.deb"
-  sh "dpkg -i chefdk_0.3.0-1_amd64.deb"
 end
 
 private
