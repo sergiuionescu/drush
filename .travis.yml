@@ -5,12 +5,12 @@ rvm:
   - 2.1.1
 env:
   global:
-    BERKSHELF_PATH=/tmp/cookbooks
+    DRUPAL_VERSION=drupal7
+    DRUPAL_VERSION=drupal6
 before_install:
   - "wget http://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.0-1_amd64.deb"
   - "sudo dpkg -i chefdk_0.3.0-1_amd64.deb"
   - "sudo berks install -d"
-  - "echo $BERKSHELF_PATH"
   - "sudo chef-solo -c test/.chef/solo.rb -j test/.chef/runlist.json"
 script:
   - bundle exec rake knife

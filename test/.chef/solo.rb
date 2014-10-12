@@ -17,7 +17,7 @@
 # valid values are: :debug, :info, :warn, :error, :fatal
 # Corresponds to chef-solo -l
 
-log_level          :info
+log_level          :debug
 
 # log_location specifies where the client should log to.
 # valid values are: a quoted string specifying a file, or STDOUT with
@@ -32,7 +32,7 @@ log_location       STDOUT
 # this as a search location, in Array order. It should be a subdirectory of
 # file_cache_path, above.
 
-cookbook_path "/tmp/cookbooks"
+cookbook_path "/home/travis/.berkshelf/cookbooks/"
 role_path "/home/travis/build/sergiuionescu/drush/roles"
 
 # recipe_url specifies a remote URL to retrieve a tarball of cookbooks.
