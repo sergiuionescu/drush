@@ -27,7 +27,8 @@ task :solo do
   sh "sudo cp -r ../drush /tmp/cookbooks/"
   sh "sudo ls /home/travis/.berkshelf/cookbooks/"
   sh "sudo chef-solo -c test/.chef/solo.rb -j test/.chef/runlist.json"
-  sh "sudo /usr/local/bin/drush --version"
+  sh "sudo ls /root/"
+  sh "sudo ls /root/.composer/"
 end
 
 task :prepare_sandbox do
