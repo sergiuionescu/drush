@@ -2,10 +2,14 @@ language: ruby
 gemfile:
    - test/support/Gemfile
 rvm:
-  - 1.9.3
+  - 2.1.1
+env:
+  - DRUSH_RUNLIST=drush7.json EXPECTED_VERSION=7.0-dev
+  - DRUSH_RUNLIST=drush6.json EXPECTED_VERSION=6.4.0
 before_install:
   - "wget http://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.0-1_amd64.deb"
   - "sudo dpkg -i chefdk_0.3.0-1_amd64.deb"
 script:
   - bundle exec rake knife
   - bundle exec rake foodcritic
+  - bundle exec rake solo

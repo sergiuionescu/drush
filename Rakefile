@@ -20,6 +20,16 @@ task :knife do
   sh "bundle exec knife cookbook test cookbook -c test/.chef/knife.rb -o #{sandbox_path}/../"
 end
 
+desc "Runs chef solo"
+task :solo do
+  sh "sudo berks install"
+  sh "sudo berks vendor /tmp/cookbooks"
+  sh "sudo cp -r ../drush /tmp/cookbooks/"
+  sh "sudo ls /home/travis/.berkshelf/cookbooks/"
+  sh "sudo chef-solo -c test/.chef/solo.rb -j test/.chef/$DRUSH_RUNLIST"
+  sh "sudo ~/.composer/vendor/drush/drush/drush --version| grep $EXPECTED_VERSION"
+end
+
 task :prepare_sandbox do
   files = %w{*.md *.rb attributes definitions files libraries providers recipes resources templates}
 

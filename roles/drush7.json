@@ -1,0 +1,14 @@
+{
+    "name": "drush7",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "Drush 7+ install",
+    "run_list": [
+        "recipe[drush]"
+    ],
+    "default_attributes": {
+        "drush": {
+            "version": "dev-master"
+        }
+    }
+}
