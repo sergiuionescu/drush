@@ -26,6 +26,13 @@ log_level          :debug
 
 log_location       STDOUT
 
+# cookbook_path specifies where solo should look for cookbooks it will use.
+# valid value is a string, or array of strings of filesystem directory locations.
+# This setting is similar to the server setting of the same name. Solo will use
+# this as a search location, in Array order. It should be a subdirectory of
+# file_cache_path, above.
+
+cookbook_path "/home/travis/build/sergiuionescu/drush/berks-cookbooks/"
 role_path "/home/travis/build/sergiuionescu/drush/roles"
 
 # recipe_url specifies a remote URL to retrieve a tarball of cookbooks.
