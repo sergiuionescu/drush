@@ -23,10 +23,11 @@ end
 desc "Runs chef solo"
 task :solo do
   sh "sudo berks install"
-  sh "sudo berks vendor -d"
-  sh "sudo cp -r ../drush /home/travis/.berkshelf/cookbooks/"
+  sh "sudo berks vendor"
+  sh "sudo cp -r ../drush /home/travis/build/sergiuionescu/drush/berks-cookbooks/"
   sh "sudo ls /home/travis/.berkshelf/cookbooks/"
   sh "sudo chef-solo -c test/.chef/solo.rb -j test/.chef/runlist.json"
+  sh "sudo drush --version"
 end
 
 task :prepare_sandbox do
