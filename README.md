@@ -39,7 +39,3 @@ Final notes
 -----------
 The Vagrantfile is for demo purposes only. 
 Please create your own, i am sure it is not a perfect example.
-
-Todos
-------
-- Set up some Travis test cases. Test that drush is installed.
