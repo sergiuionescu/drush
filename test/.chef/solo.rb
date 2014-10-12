@@ -32,7 +32,7 @@ log_location       STDOUT
 # this as a search location, in Array order. It should be a subdirectory of
 # file_cache_path, above.
 
-cookbook_path "/home/travis/build/sergiuionescu/drush/berks-cookbooks/"
+cookbook_path "/tmp/cookbooks/"
 role_path "/home/travis/build/sergiuionescu/drush/roles"
 
 # recipe_url specifies a remote URL to retrieve a tarball of cookbooks.
