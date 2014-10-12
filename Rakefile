@@ -20,6 +20,11 @@ task :knife do
   sh "bundle exec knife cookbook test cookbook -c test/.chef/knife.rb -o #{sandbox_path}/../"
 end
 
+desc "Runs chef solo"
+task :solo do
+  sh "sudo chef-solo -j roles/drush.json"
+end
+
 task :prepare_sandbox do
   files = %w{*.md *.rb attributes definitions files libraries providers recipes resources templates}
 
