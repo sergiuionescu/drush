@@ -22,7 +22,11 @@ end
 
 desc "Runs chef solo"
 task :solo do
-  sh "sudo chef-solo -j roles/drush.json"
+  sh "sudo berks install"
+  sh "sudo berks vendor -d"
+  sh "sudo cp -r ../drush /home/travis/.berkshelf/cookbooks/"
+  sh "sudo ls /home/travis/.berkshelf/cookbooks/"
+  sh "sudo chef-solo -c test/.chef/solo.rb -j test/.chef/runlist.json"
 end
 
 task :prepare_sandbox do

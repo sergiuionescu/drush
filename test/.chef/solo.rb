@@ -17,7 +17,7 @@
 # valid values are: :debug, :info, :warn, :error, :fatal
 # Corresponds to chef-solo -l
 
-log_level          :debug
+log_level          :info
 
 # log_location specifies where the client should log to.
 # valid values are: a quoted string specifying a file, or STDOUT with
