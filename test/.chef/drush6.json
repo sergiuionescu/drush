@@ -1,5 +1,5 @@
 {
     "run_list": [
-        "role[drush]"
+        "role[drush6]"
     ]
 }
