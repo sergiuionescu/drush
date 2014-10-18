@@ -27,7 +27,7 @@ task :solo do
   sh "sudo cp -r ../drush /tmp/cookbooks/"
   sh "sudo ls /home/travis/.berkshelf/cookbooks/"
   sh "sudo chef-solo -c test/.chef/solo.rb -j test/.chef/$DRUSH_RUNLIST"
-  sh "sudo ~/.composer/vendor/drush/drush/drush --version| grep $EXPECTED_VERSION"
+  sh "sudo drush --version| grep $EXPECTED_VERSION"
 end
 
 task :prepare_sandbox do
