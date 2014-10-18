@@ -11,5 +11,5 @@ execute "install-drush" do
 end
 
 link "/usr/local/bin/drush" do
-  to "~/.composer/vendor/drush/drush/drush"
+  to "#{ENV['HOME']}/.composer/vendor/drush/drush/drush"
 end
