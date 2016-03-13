@@ -12,4 +12,3 @@ before_install:
 script:
   - bundle exec rake knife
   - bundle exec rake foodcritic
-  - bundle exec rake solo

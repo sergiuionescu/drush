@@ -12,4 +12,9 @@ end
 
 link "/usr/local/bin/drush" do
   to "#{ENV['HOME']}/.composer/vendor/drush/drush/drush"
+  only_if "ls #{ENV['HOME']}/.composer/vendor/drush/drush/drush"
+end
+link "/usr/local/bin/drush" do
+  to "#{ENV['HOME']}/.composer/vendor/drush/drush/drush"
+  only_if "ls #{ENV['HOME']}/.config/composer/vendor/drush/drush/drush"
 end
